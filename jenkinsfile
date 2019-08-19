@@ -22,4 +22,8 @@ node ("hello") {
       junit '**/target/surefire-reports/TEST-*.xml'
       archiveArtifacts 'target/*.jar'
    }
+   stage('Email')
+   {
+   emailext body: 'success', subject: 'success', to: 'tanujbhatia3@gmail.com'
+   }
 }
